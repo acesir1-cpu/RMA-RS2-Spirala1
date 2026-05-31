@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Semantičke boje — svijetla tema (vidi values-night za tamnu) -->
+    <color name="ww_bg">#F0F4F8</color>
+    <color name="ww_card">#FFFFFF</color>
+    <color name="ww_text_primary">#0D2B4E</color>
+    <color name="ww_text_body">#334155</color>
+    <color name="ww_text_secondary">#64748B</color>
+    <color name="ww_text_muted">#94A3B8</color>
+    <color name="ww_accent">#1565C0</color>
+    <color name="ww_precip">#1E88E5</color>
+    <color name="ww_field_stroke">#E2E8F0</color>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WeatherWatch</string>
+
+    <!-- DetaljiActivity -->
+    <string name="label_satna_prognoza">🕐  HOURLY FORECAST</string>
+    <string name="label_dnevna_prognoza">📅  7-DAY FORECAST</string>
+    <string name="label_detalji">🌡  DETAILS</string>
+    <string name="label_padavine">🌧  PRECIPITATION</string>
+    <string name="label_vjetar">💨  Wind</string>
+    <string name="label_vlaznost">💧  Humidity</string>
+    <string name="label_uv">☀  UV Index</string>
+    <string name="label_pritisak">⬇  Pressure</string>
+    <string name="label_vidljivost">👁  Visibility</string>
+    <string name="label_oblacnost">☁  Cloud Cover</string>
+    <string name="osjecaj_prefix">Feels like</string>
+
+    <!-- SettingsActivity -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_tema">THEME</string>
+    <string name="settings_tema_light">Light</string>
+    <string name="settings_tema_dark">Dark</string>
+    <string name="settings_tema_auto">Auto</string>
+    <string name="settings_jezik">LANGUAGE</string>
+    <string name="settings_jedinice">TEMPERATURE UNITS</string>
+    <string name="settings_notifikacije">NOTIFICATIONS</string>
+    <string name="settings_notif_dnevne">Daily notifications</string>
+    <string name="settings_notif_dnevne_opis">Morning forecast</string>
+    <string name="settings_notif_oluja">Storm warnings</string>
+    <string name="settings_notif_oluja_opis">Emergency alerts</string>
+
+    <!-- MainActivity -->
+    <string name="dodano">Location added!</string>
+    <string name="pronadeno">Found %d locations</string>
+</resources>

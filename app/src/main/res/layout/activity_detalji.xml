@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/ww_bg">
+
+    <LinearLayout
+        android:id="@+id/detaljiContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ===== GRADIENT HEADER (toolbar + glavno vrijeme) ===== -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView android:id="@+id/ivBgGradient"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@null"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbarDetalji"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="?attr/actionBarSize"
+                    android:background="@android:color/transparent"
+                    android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+                    app:titleTextAppearance="@style/ToolbarTitleAppearance"
+                    app:titleTextColor="#FFFFFF"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="32dp">
+
+                    <ImageView android:id="@+id/ivMainWeatherIcon"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:contentDescription="@null"/>
+
+                    <TextView android:id="@+id/tvGlavnaTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="72sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginTop="8dp"/>
+
+                    <TextView android:id="@+id/tvGlavniOpis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginTop="4dp"/>
+
+                    <TextView android:id="@+id/tvOsjecaj"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/bg_chip"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <TextView android:id="@+id/tvMinMaxGlavni"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginTop="10dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- ===== KARTICA: SATNA PROGNOZA ===== -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/ww_card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_satna_prognoza"
+                    android:textSize="13sp"
+                    android:letterSpacing="0.08"
+                    android:textColor="@color/ww_text_muted"
+                    android:layout_marginBottom="12dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSatnaPrognoza"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ===== KARTICA: 7-DNEVNA PROGNOZA ===== -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/ww_card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_dnevna_prognoza"
+                    android:textSize="13sp"
+                    android:letterSpacing="0.08"
+                    android:textColor="@color/ww_text_muted"
+                    android:layout_marginBottom="8dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvDnevnaPrognoza"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ===== KARTICA: DETALJI (grid 2x3) ===== -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/ww_card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_detalji"
+                    android:textSize="13sp"
+                    android:letterSpacing="0.08"
+                    android:textColor="@color/ww_text_muted"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- red 1: Vjetar / Vlažnost -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout style="@style/DetaljTile" android:layout_marginEnd="12dp">
+                        <TextView style="@style/DetaljLabel" android:text="@string/label_vjetar"/>
+                        <TextView android:id="@+id/tvVjetar" style="@style/DetaljValue"/>
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/DetaljTile">
+                        <TextView style="@style/DetaljLabel" android:text="@string/label_vlaznost"/>
+                        <TextView android:id="@+id/tvVlaznost" style="@style/DetaljValue"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- red 2: UV / Pritisak -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout style="@style/DetaljTile" android:layout_marginEnd="12dp">
+                        <TextView style="@style/DetaljLabel" android:text="@string/label_uv"/>
+                        <TextView android:id="@+id/tvUv" style="@style/DetaljValue"/>
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/DetaljTile">
+                        <TextView style="@style/DetaljLabel" android:text="@string/label_pritisak"/>
+                        <TextView android:id="@+id/tvPritisak" style="@style/DetaljValue"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- red 3: Vidljivost / Oblačnost -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout style="@style/DetaljTile" android:layout_marginEnd="12dp">
+                        <TextView style="@style/DetaljLabel" android:text="@string/label_vidljivost"/>
+                        <TextView android:id="@+id/tvVidljivost" style="@style/DetaljValue"/>
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/DetaljTile">
+                        <TextView style="@style/DetaljLabel" android:text="@string/label_oblacnost"/>
+                        <TextView android:id="@+id/tvOblacnost" style="@style/DetaljValue"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ===== KARTICA: PADAVINE ===== -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/ww_card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_padavine"
+                    android:textSize="13sp"
+                    android:letterSpacing="0.08"
+                    android:textColor="@color/ww_text_muted"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView android:id="@+id/tvPadavine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/ww_precip"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

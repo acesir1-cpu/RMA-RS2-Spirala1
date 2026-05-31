@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="WeatherWatch"
+            app:titleTextColor="#FFFFFF"
+            app:titleTextAppearance="@style/ToolbarTitleAppearance"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ww_bg"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- KARTICA: Dodaj lokaciju -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/ww_card"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dodaj lokaciju"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/ww_text_primary"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DRŽAVA"
+                        android:textSize="12sp"
+                        android:letterSpacing="0.08"
+                        android:textColor="@color/ww_text_muted"
+                        android:layout_marginBottom="6dp"/>
+                    <Spinner android:id="@+id/odabirDrzave"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_spinner"
+                        android:layout_marginBottom="16dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GRAD"
+                        android:textSize="12sp"
+                        android:letterSpacing="0.08"
+                        android:textColor="@color/ww_text_muted"
+                        android:layout_marginBottom="6dp"/>
+                    <Spinner android:id="@+id/odabirGrada"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_spinner"
+                        android:layout_marginBottom="16dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TIP PRIKAZA"
+                        android:textSize="12sp"
+                        android:letterSpacing="0.08"
+                        android:textColor="@color/ww_text_muted"
+                        android:layout_marginBottom="6dp"/>
+                    <Spinner android:id="@+id/odabirTipaPrikaza"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_spinner"
+                        android:layout_marginBottom="20dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/dodajLokacijuDugme"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:text="+ Dodaj lokaciju"
+                        android:textSize="15sp"
+                        android:letterSpacing="0.05"
+                        app:cornerRadius="27dp"
+                        app:backgroundTint="@color/ww_accent"
+                        android:textColor="#FFFFFF"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- KARTICA: Filteri -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/ww_card"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Filteri"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/ww_text_primary"
+                        android:layout_marginBottom="12dp"/>
+
+                    <Spinner android:id="@+id/filterLokacija"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_spinner"/>
+
+                    <TextView android:id="@+id/brojLokacija"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:textColor="@color/ww_text_secondary"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="16dp"/>
+
+                    <TextView
+                        android:id="@+id/prikaziPrognozuDugme"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="PRIKAŽI PROGNOZU →"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.05"
+                        android:textColor="#FFFFFF"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="@drawable/bg_button_prognoza"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Naslov: Moje lokacije -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Moje lokacije"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/ww_text_primary"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="12dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerLokacije"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

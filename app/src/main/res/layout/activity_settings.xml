@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/ww_bg">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        app:titleTextAppearance="@style/ToolbarTitleAppearance"
+        app:titleTextColor="#FFFFFF"
+        app:title="@string/settings_title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ===== TEMA ===== -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp" app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/ww_card"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+
+                    <TextView style="@style/SettingsSekcija" android:text="@string/settings_tema"/>
+
+                    <RadioGroup android:id="@+id/rgTema" android:orientation="horizontal"
+                        android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <RadioButton android:id="@+id/rbTemaLight" android:text="@string/settings_tema_light"
+                            style="@style/SettingsRadio"/>
+                        <RadioButton android:id="@+id/rbTemaDark" android:text="@string/settings_tema_dark"
+                            style="@style/SettingsRadio"/>
+                        <RadioButton android:id="@+id/rbTemaAuto" android:text="@string/settings_tema_auto"
+                            style="@style/SettingsRadio"/>
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ===== JEZIK ===== -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp" app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/ww_card"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+
+                    <TextView style="@style/SettingsSekcija" android:text="@string/settings_jezik"/>
+
+                    <RadioGroup android:id="@+id/rgJezik" android:orientation="horizontal"
+                        android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <RadioButton android:id="@+id/rbJezikBs" android:text="Bosanski"
+                            style="@style/SettingsRadio"/>
+                        <RadioButton android:id="@+id/rbJezikEn" android:text="English"
+                            style="@style/SettingsRadio"/>
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ===== TEMPERATURNE JEDINICE ===== -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp" app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/ww_card"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+
+                    <TextView style="@style/SettingsSekcija" android:text="@string/settings_jedinice"/>
+
+                    <RadioGroup android:id="@+id/rgJedinice" android:orientation="horizontal"
+                        android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <RadioButton android:id="@+id/rbCelsius" android:text="Celsius (°C)"
+                            style="@style/SettingsRadio"/>
+                        <RadioButton android:id="@+id/rbFahrenheit" android:text="Fahrenheit (°F)"
+                            style="@style/SettingsRadio"/>
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ===== NOTIFIKACIJE ===== -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp" app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/ww_card"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+
+                    <TextView style="@style/SettingsSekcija" android:text="@string/settings_notifikacije"/>
+
+                    <!-- Dnevne notifikacije -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:paddingTop="6dp" android:paddingBottom="6dp">
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                            android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:text="@string/settings_notif_dnevne"
+                                android:textSize="16sp" android:textColor="@color/ww_text_primary"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <TextView android:text="@string/settings_notif_dnevne_opis"
+                                android:textSize="13sp" android:textColor="@color/ww_text_secondary"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/swNotifikacije"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <!-- Upozorenja na oluju -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:paddingTop="10dp" android:paddingBottom="6dp">
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                            android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:text="@string/settings_notif_oluja"
+                                android:textSize="16sp" android:textColor="@color/ww_text_primary"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <TextView android:text="@string/settings_notif_oluja_opis"
+                                android:textSize="13sp" android:textColor="@color/ww_text_secondary"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/swOluja"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

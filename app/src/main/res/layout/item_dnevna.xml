@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="14dp"
+    android:paddingBottom="14dp"
+    android:gravity="center_vertical">
+
+    <TextView android:id="@+id/tvDan"
+        android:layout_width="52dp" android:layout_height="wrap_content"
+        android:textSize="16sp" android:textStyle="bold" android:textColor="@color/ww_text_primary"/>
+
+    <ImageView android:id="@+id/ivDnevnaIkona"
+        android:layout_width="34dp" android:layout_height="34dp"
+        android:layout_marginStart="8dp" android:layout_marginEnd="14dp"
+        android:contentDescription="@null"/>
+
+    <TextView android:id="@+id/tvDnevnaPadavine"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:minWidth="48dp"
+        android:textSize="15sp" android:textColor="@color/ww_precip"/>
+
+    <View android:layout_width="0dp" android:layout_height="1dp"
+        android:layout_weight="1"/>
+
+    <TextView android:id="@+id/tvDnevnaMin"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:textSize="16sp" android:textColor="@color/ww_text_muted"
+        android:layout_marginEnd="16dp"/>
+
+    <TextView android:id="@+id/tvDnevnaMax"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:textSize="16sp" android:textStyle="bold" android:textColor="@color/ww_text_primary"/>
+</LinearLayout>
